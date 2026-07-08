@@ -1,0 +1,30 @@
+<!AMML "module" 1.0.0>
+<javascript>
+    const mainBtn = document.getElementById("start-btn");
+    const clickBtn = document.getElementById("click-btn");
+    const clicksTxt = document.getElementById("clicks-count");
+    const mainMenu = document.getElementById("main-menu");
+    const gameMenu = document.getElementById("game-menu");
+    let clicks = 0;
+    mainBtn.addEventListener('click', () => {
+        mainMenu.style.display = "none";
+        gameMenu.style.display = "block";
+    });
+    clickBtn.addEventListener('click', () => {
+        clicks += 1;
+        clicksTxt.textContent = clicks;
+    });
+</javascript>
+<css>
+    body
+    {display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%}
+
+    #game-menu
+    {display: none}
+
+    button
+    {cursor: pointer}
+</css>

@@ -1,0 +1,32 @@
+{
+  "name": "amml-lang",
+  "version": "1.0.0",
+  "description": "A CLI for the language AMML (Advanced Modular Markup Language), ",
+  "main": "index.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "bin": {
+    "amml": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "xml",
+    "parser",
+    "fs-extra",
+    "json"
+  ],
+  "author": "javascript-system",
+  "license": "ISC",
+  "dependencies": {
+    "adm-zip": "^0.5.18",
+    "fast-xml-parser": "^5.9.3",
+    "fs-extra": "^11.2.0",
+    "html-validate": "^11.5.5",
+    "open": "^11.0.0",
+    "readline-sync": "^1.4.10",
+    "urllib": "^4.9.0"
+  }
+}

@@ -1,0 +1,7 @@
+<!AMML 1.0.0 "component">
+<interface>
+    <div id="main-menu">
+        <h1>HMML clicker game</h1>
+        <button id="start-btn">Start!</button>
+    </div>
+</interface>
