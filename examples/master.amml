@@ -1,7 +1,0 @@
-<!AMML 1.0.0 "master">
-<window title="clicker" charset="utf-8" lang="en-us"/>
-<interface>
-    <!element:src("menu.amml")/>
-    <!element:src("game.amml")/>
-    <!module:src("scripts.amml")/>
-</interface>
