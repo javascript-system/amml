@@ -7,7 +7,7 @@ module.exports = {
     version: "1.0.0",
     author: "AMML S. plugins©",
     license: "CC BY 4.0",
-    description: "Calculates a value from simple arithmetic operators (they include add, sub, div, mult and random), the numbers are separated by commas.",
+    description: "Returns a value about the environment.",
     example: '<!env:platform()/>',
     returnsCode: true,
     dependencies: {
