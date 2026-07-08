@@ -223,31 +223,30 @@ async function pluginsFun(args) {
                 log("Plugin reset canceled by the user.");
                 return;
             }
+
             const pluginsPath = path.join(__dirname, '../lang/plugins');
-            const repoZipUrl = 'toAdd';
-            const zipFilePath = path.join(__dirname, 'temp_amml_repo.zip');
+            const localZipPath = path.join(__dirname, '../lang/default-plugins.zip');
+
             log("Deleting old plugins...");
             await fs.emptyDir(pluginsPath);
-            log("Downloading original package from GitHub...");
-            const response = await fetch(repoZipUrl);
-            if (!response.ok) { throw new Error(`Request failed. Status: ${response.status} - ${response.statusText}`) }
-            const arrayBuffer = await response.arrayBuffer();
-            const buffer = Buffer.from(arrayBuffer);
-            await fs.writeFile(zipFilePath, buffer);
+
+            log("Reading original package from local storage...");
+            if (!await fs.pathExists(localZipPath)) {
+                throw new Error(`Local zip file not found at: ${localZipPath}`);
+            }
+            const buffer = await fs.readFile(localZipPath);
             log("Extracting plugins...");
-            const zip = new AdmZip(zipFilePath);
+            const zip = new AdmZip(buffer);
             const zipEntries = zip.getEntries();
-            const targetFolder = 'amml-main/lang/plugins/';
             zipEntries.forEach(entry => {
-                if (entry.entryName.startsWith(targetFolder) && !entry.isDirectory) {
-                    const relativePath = entry.entryName.replace(targetFolder, '');
-                    const destPath = path.join(pluginsPath, relativePath);
+                if (!entry.isDirectory) {
+                    const destPath = path.join(pluginsPath, entry.entryName);
                     fs.ensureDirSync(path.dirname(destPath));
                     fs.writeFileSync(destPath, entry.getData());
                 }
             });
+
             log("Success! Plugins have been reset to the default version.");
-            if (await fs.exists(zipFilePath)) { await fs.remove(zipFilePath) }
         }
         else { throw new Error(`Unknown function type ${cmd}, use list/info/install/add/remove.`) }
     }
