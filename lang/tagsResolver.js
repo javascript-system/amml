@@ -9,10 +9,7 @@ async function resolveTags(code, settings, scriptPath) {
     const specialTags = [];
     const metaTags = [];
     const ignorePattern = `#(?:<!).*|"(?:[^"\\\\]|\\\\.)*"|'(?:[^'\\\\]|\\\\.)*'|\`(?:[^\`\\\\]|\\\\.)*\``;
-    
-    // ALTERADO: O grupo de aspas agora tem um '?' no final e o fechamento aceita '/' opcional
     const specialTagRegex = new RegExp(`${ignorePattern}|(<!([a-zA-Z0-9_\\-]+)(?::([a-zA-Z0-9_\\-]+))?\\s*\\(\\s*(?:"([^"]*)"|'([^']*)')?\\s*\\)\\s*\\/?\\s*>)`, "g");
-    
     const metaTagRegex = new RegExp(`${ignorePattern}|(<!AMML(?:\\s+(\\d+\\.\\d+\\.\\d+))?(?:\\s+(?:"([^"]*)"|'([^']*)'|(module)))?\\s*>|<!AMML\\s+(?:"([^"]*)"|'([^']*)'|(module))\\s+(\\d+\\.\\d+\\.\\d+)\\s*>)`, "g");
     const strictMetaCheck = new RegExp(`^\\s*(?:${metaTagRegex.source})`);
     const pluginRegex = /^\/\*\*@plugin\s+([a-zA-Z]+)\*\//;
