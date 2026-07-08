@@ -5,7 +5,7 @@ module.exports = {
     author: "AMML S. Plugins",
     license: "CC BY 4.0",
     supports: ["year", "month", "day", "hours", "seconds", "miliseconds"],
-    description: "Inserts an element in somewhere.",
+    description: "Returns a value about the date.",
     example: '<!date:hours())/>',
     returnsCode: true,
     dependencies: {
