@@ -48,6 +48,34 @@ amml help
 
 ---
 
+# Visual Studio Code Extension
+
+AMML has an official Visual Studio Code extension available on the Marketplace.
+
+It provides a modern editing experience with features such as:
+
+- 🎨 Syntax Highlighting
+- 🧠 IntelliSense
+- 💬 Plugin Hover Documentation
+- ⚡ Embedded JavaScript & CSS support
+- 🔍 Live diagnostics
+- ✨ Document Formatter
+- 🚀 Language Server
+
+Install it directly from the Visual Studio Marketplace:
+
+https://marketplace.visualstudio.com/items?itemName=javascript-system.amml-language
+
+Or search for:
+
+```
+AMML Language
+```
+
+inside the **Extensions** panel of Visual Studio Code.
+
+---
+
 # Language Overview
 
 AMML keeps an XML-based syntax to simplify parsing while remaining easy to read.
@@ -330,8 +358,6 @@ The next planned features include:
 
 - ✅ More official plugins
 - ✅ Better special tags
-- ✅ Native Visual Studio Code extension (.vsix)
-- ✅ Full Language Server (autocomplete, diagnostics, hover, go-to-definition...)
 - 🚧 Better IntelliSense
 - 🚧 More built-in language features
 - 🚧 Web compilation service running on Render
