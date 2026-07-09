@@ -27,7 +27,7 @@ module.exports = {
             case 'year':
                 return new Date().getFullYear();
             default:
-                return "Opção inválida";
+                context.error("Invalid option");
         }
     }
 }
