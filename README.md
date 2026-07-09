@@ -35,6 +35,11 @@ Clone the repository and install the dependencies:
 npm install
 ```
 
+Make it global (if you don't want, you can still use node index.js)
+```bash
+npm link
+```
+
 You can then use the CLI:
 
 ```bash
